@@ -1,0 +1,41 @@
+* {
+    border: 0;
+    margin: 0;
+    background-color: black;
+    color: aliceblue;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.meio {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+}
+
+.smartia {
+    width: 50%;
+}
+
+.beta {
+    width: 5%;
+    margin-left: 750px;
+}
+
+footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;
+}
+
+.seta {
+    width: 5%;
+}
