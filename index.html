@@ -4,32 +4,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart.IA</title>
+    <title>Smart.ia</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <header>
-        <img class="logo" src="img/logo.png" alt="Logo Smart.IA">
-        <div class="cabeçalho">
-            <a href="">Sobre a ferramenta</a>
-            <a href="">Sobre nós</a>
-            <a href="">Contatos</a>
-            <img src="img/gitinsta.png" alt="Redes Sociais">
+        <nav class="cabeçalho">
+            <img class="logo" src="img/logo.png" alt="Logo Smart.ia" width="50px">
+            <div id="separa">
+                <a href="">Sobre a ferramenta</a>
+                <a href="">Sobre nós</a>
+                <a href="">Contatos</a>
+                <img src="img/gitinsta.png" alt="Redes Sociais" width="100px">
+            </div>
+        </nav>
+        <div id="meio">
+            <img class="smartia" src="img/smartia.png" alt="Logo Completa Smart.IA">
+            <h2 id="clique">Clique aqui para utilizar:</h2>
+            <a class="ferramenta pulse512" href="">Ferramenta</a>
         </div>
+        <div id="vm">
+            <h2>Veja mais</h2>
+            <i data-lucide="chevrons-down" class="pulse seta"></i>
+        </div>
+
     </header>
 
-    <div class="meio">
-        <img class="smartia" src="img/smartia.png" alt="Logo Completa Smart.IA">
-        <img class="beta" src="img/bttn.png" alt="beta">
-        <h2>Clique aqui para utilizar:</h2>
-        <a class="ferramenta" href="">Ferramenta</a>
-    </div>
+    <div id="cards">
+        <div class="card">
+            <img src="img/troca.png" alt="">
+            <h1 class="card-title">ENVIAR</h1>
+            <p class="desc">Aprenda a enviar de forma mais rápida suas demandas.</p>
+            <div class="corner">
+                <div class="arrow">→</div>
+            </div>
+        </div>
 
-    <footer>
-        <h2>Veja mais</h2>
-        <img class="seta" src="img/setadown.png" alt="Seta para baixo">
-    </footer>
+        <div id="cards">
+            <div class="card">
+                <img src="img/wallet.png" alt="">
+                <h1 class="card-title">SALVAR</h1>
+                <p class="desc">Salve de forma rápida e ágil sem perder suas imagens.</p>
+                <div class="corner">
+                    <div class="arrow">→</div>
+                </div>
+            </div>
+
+            <div id="cards">
+                <div class="card">
+                    <img src="img/imgs.png" alt="">
+                    <h1 class="card-title">IMAGENS</h1>
+                    <p class="desc">Procure suas imagens da melhor forma com a Smart.ia!</p>
+                    <div class="corner">
+                        <div class="arrow">→</div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <script src="https://unpkg.com/lucide@latest"></script>
+            <script>
+                lucide.createIcons();
+            </script>
 </body>
 
 </html>
