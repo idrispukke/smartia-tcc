@@ -3,6 +3,7 @@
     margin: 0;
     color: white;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-decoration: none;
 }
 
 
@@ -32,10 +33,6 @@ header {
     flex-direction: column;
     height: 100vh;
     position: relative;
-}
-
-a {
-    text-decoration: none;
 }
 
 .cabeçalho {
@@ -73,7 +70,6 @@ a {
 }
 
 .ferramenta {
-
     margin-top: 1rem;
     border: none;
     color: #fff;
@@ -108,9 +104,15 @@ a {
     color: #fff;
 }
 
+main{
+    padding-top: 13rem;
+}
+
 #cards {
     display: flex;
     align-items: center;
+    justify-content: center;
+    padding-bottom: 5rem;
 }
 
 .card-title {
@@ -191,4 +193,43 @@ a {
 .card:hover .card-title {
     transition: all 0.5s ease-out;
     color: #5c5b5b;
+}
+
+#ferr{
+    display: flex;
+}
+
+#desc-ferr{
+    width: 38rem;
+    font-size: 1.4rem;
+}
+
+.child{
+    position: relative;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.separate{
+    padding-top: 4rem;
+}
+
+#sep-ferr{
+    padding-bottom: 1.3rem;
+}
+
+#muie{
+    width: 30%;
+    height: 20  rem;
+    object-fit: cover;
+}
+
+#time{
+    width: 50%;
+    height: 15rem;
 }
