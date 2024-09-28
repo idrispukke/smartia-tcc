@@ -14,16 +14,16 @@
         <nav class="cabeçalho">
             <img class="logo" src="img/logo.png" alt="Logo Smart.ia" width="50rem">
             <div id="separa">
-                <a href="">Sobre a ferramenta</a>
-                <a href="">Sobre nós</a>
-                <a href="">Contatos</a>
+                <a href="#about-ferr">Sobre a ferramenta</a>
+                <a href="#about-us">Sobre nós</a>
+                <a href="#contacts">Contatos</a>
                 <img src="img/gitinsta.png" alt="Redes Sociais" width="80rem">
             </div>
         </nav>
 
         <div id="meio">
             <img class="smartia" src="img/smartia.png" alt="Logo Completa Smart.IA">
-            <h2 id="clique">Clique aqui para utilizar:</h2>
+            <h2 id="clique" style="font-size: 2rem;">Clique aqui para utilizar:</h2>
             <a class="ferramenta pulse512" href="">Ferramenta</a>
         </div>
 
@@ -34,9 +34,9 @@
     </header>
 
     <main>
-        <div id="cards">
+        <div id="cards" style="padding-top: 4rem;">
             <div class="card">
-                <img src="img/troca.png" alt="">
+                <img class="card-icon" src="img/troca.png" alt="">
                 <h1 class="card-title">ENVIAR</h1>
                 <p class="desc">Aprenda a enviar de forma mais rápida suas demandas.</p>
                 <div class="corner">
@@ -45,7 +45,7 @@
             </div>
 
             <div class="card">
-                <img src="img/wallet.png" alt="">
+                <img class="card-icon" src="img/wallet.png" alt="">
                 <h1 class="card-title">SALVAR</h1>
                 <p class="desc">Salve de forma rápida e ágil sem perder suas imagens.</p>
                 <div class="corner">
@@ -54,7 +54,7 @@
             </div>
 
             <div class="card">
-                <img src="img/imgs.png" alt="">
+                <img class="card-icon" src="img/imgs.png" alt="">
                 <h1 class="card-title">IMAGENS</h1>
                 <p class="desc">Procure suas imagens da melhor forma com a Smart.ia!</p>
                 <div class="corner">
@@ -65,16 +65,16 @@
         </div>
 
         <div id="ferr">
-            <div class="container">
-                <div class="child" style="padding-left: 7rem;">
-                    <h2>Sobre a ferramenta:</h2>
-                    <p id="desc-ferr">Nossa ferramenta apresenta: Leonard.ai, Chat GPT e (em breve) outras IAs para de
+            <div class="container" style="padding-right: 10rem;">
+                <div class="child">
+                    <h2 id="about-ferr" style="font-size: 4rem; padding-bottom: 1rem;">Sobre a ferramenta</h2>
+                    <p id="desc-ferr">Nossa ferramenta apresenta: Leonard.ai, ChatGPT e (em breve) outras IAs para de
                         formapersonalizada e com aprendizado específico fazer a melhor criação de conteúdo, para
                         diversas plataformas. </p>
                 </div>
 
                 <div class="separate">
-                    <p id="sep-ferr">Clique aqui para utilizar:</p>
+                    <p id="sep-ferr" style="font-size: 1.7rem;">Clique aqui para utilizar:</p>
                     <a href="" class="ferramenta pulse512">Ferramenta</a>
                 </div>
             </div>
@@ -83,32 +83,35 @@
         </div>
 
         <div style="justify-content: center; align-items: center;">
-            <h3>Sobre nós:</h3>
-            <p>Somos o time Smart.ia, estudamos juntos e decidimos criar esse projeto. <b>Clique nas imagens para saber
-                    mais.</b></p>
+            <h3 id="about-us" style="padding-top: 7rem; font-size: 4rem;">Nossa equipe</h3>
+            <p style="font-size: 1.5rem;">Somos o time Smart.ia, estudamos juntos e decidimos criar esse projeto.</p>
             <img id="time" src="img/time.png" alt="">
         </div>
 
-        <div>
-            <div>
-                <h3>Sobre a empresa</h3>
-                <h4>Uma empresa totalmente dedicada e apaixonada pelos nossos clientes!</h4>
+        <div id="emp" style="display: flex; align-items: center; flex-direction: column;">
+            <div style="display: flex; align-items: center; flex-direction: column;">
+                <h3 style="font-size: 4rem; padding-top: 7rem;">Sobre a empresa</h3>
+                <h4 style="font-size: 1.5rem; padding-top: 2rem;">Uma empresa totalmente dedicada e apaixonada pelos
+                    nossos clientes!</h4>
+            </div>
+
+            <div id="over-emp">
+                <p id="emp-desc"">A empresa Smart.ia se dedica com um compromisso inabalável com a qualidade e a inovação, ela não apenas atende às expectativas dos seus clientes, mas frequentemente as supera. Desde sua fundação em 2024, tem sido sinônimo de integridade, dedicação e inovação.</p>
             </div>
 
             <div>
-                <p>A empresa Smart.ia se dedica com um compromisso inabalável com a qualidade e a inovação, ela
-                    não apenas atende às expectativas dos seus clientes, mas frequentemente as supera. Desde sua
-                    fundação em 2024, tem sido sinônimo de integridade, dedicação e inovação. Contando com uma
-                    equipe excepcional.</p>
-                <a href="">Saiba mais</a>
+            <a href="" style=" color: #17C7FF;">Saiba mais</a>
+                    <i data-lucide="arrow-right" style="color: #17C7FF;"></i>
             </div>
         </div>
     </main>
 
-    <footer>
-        <img src="img/smartia.png" alt="">
-        <input type="text" name="" id="" placeholder="Endereço de Email">
-        <div>
+    <footer id="contacts" style="padding-top: 20rem">
+        <div style="display:flex; flex-direction: column;">
+            <img src="img/smartia.png" alt="" style="width: 40%;">
+        </div>
+
+        <div style="display: flex; color: #565976;">
             <div>
                 <h5>Contatos</h5>
                 <h6>Instagram</h6>
@@ -116,8 +119,8 @@
                 <h6>Email</h6>
             </div>
 
-            <div>
-                <a href="">Privacy Policy and Terms of Service</a>
+            <div style="margin-left: 20rem;">
+                <h5>Privacy Policy and Terms of Service</h5>
                 <h6>Smart.ia3</h6>
                 <h6>(21) 99626-8914</h6>
                 <h6>Smartiatecno@gmail.com</h6>

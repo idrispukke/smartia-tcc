@@ -1,7 +1,6 @@
 * {
     border: 0;
     margin: 0;
-    color: white;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     text-decoration: none;
 }
@@ -23,24 +22,30 @@
 
 body {
     background: url('img/LandingPage.png') no-repeat;
-    background-size: cover;
+background-size: cover;
+    color: white;
+}
+
+a{
+    color: white;
 }
 
 header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     flex-direction: column;
     height: 100vh;
-    position: relative;
 }
 
 .cabeçalho {
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
     width: 100%;
-    padding-top: 1rem;
+    padding: 1rem;
+}
+
+#separa{
+    display: flex;
+    align-items: center;
+    justify-content: end;
 }
 
 #meio {
@@ -70,15 +75,14 @@ header {
 }
 
 .ferramenta {
-    margin-top: 1rem;
+    margin-top: 2rem;
     border: none;
     color: #fff;
     background-image: linear-gradient(30deg, #0400ff, #4ce3f7);
     border-radius: 10px;
-    background-size: 100% auto;
     font-family: inherit;
-    font-size: 17px;
-    padding: 0.6em 1.5em;
+    font-size: 2rem;
+    padding: 1rem 2em;
 }
 
 .ferramenta:hover {
@@ -104,8 +108,9 @@ header {
     color: #fff;
 }
 
-main{
-    padding-top: 13rem;
+main {
+    padding-top: 20rem;
+    text-align: center;
 }
 
 #cards {
@@ -115,12 +120,19 @@ main{
     padding-bottom: 5rem;
 }
 
+.card-icon {
+    width: 6rem;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
 .card-title {
     color: #a8a7a7;
     font-size: 1.5em;
     line-height: normal;
     font-weight: 700;
     margin-bottom: 0.5em;
+    margin-top: 1rem;
 }
 
 .desc {
@@ -155,15 +167,14 @@ main{
     display: block;
     position: relative;
     max-width: 300px;
-    max-height: 320px;
+    max-height: 100%;
     border-radius: 10px;
-    padding: 2em 1.2em;
-    margin: 12px;
+    padding: 5rem 2rem;
+    margin: 1.2rem;
     text-decoration: none;
     z-index: 0;
     overflow: hidden;
     background: linear-gradient(to bottom, #333435, #232525);
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 .card:before {
@@ -195,41 +206,76 @@ main{
     color: #5c5b5b;
 }
 
-#ferr{
+#ferr {
     display: flex;
+    justify-content: center;
 }
 
-#desc-ferr{
+#desc-ferr {
     width: 38rem;
     font-size: 1.4rem;
 }
 
-.child{
+.child {
     position: relative;
 }
 
-.container{
+.container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.separate{
+.separate {
     padding-top: 4rem;
 }
 
-#sep-ferr{
+#sep-ferr {
     padding-bottom: 1.3rem;
 }
 
-#muie{
-    width: 30%;
-    height: 20  rem;
+#muie {
+    width: 40%;
     object-fit: cover;
 }
 
-#time{
-    width: 50%;
-    height: 15rem;
+#time {
+    width: 96%;
+    height: 30rem;
+}
+
+#emp-all {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#over-emp {
+    background-color: #1A1B23;
+    opacity: 80%;
+    width: 80%;
+    border-radius: 1rem;
+    margin-top: 10rem;
+}
+
+#emp-desc {
+    font-size: 1.5rem;
+    padding: 4rem 3rem;
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h5{
+    font-size: 1.5rem;
+}
+
+h6{
+    font-size: 1rem;
+    padding: 1rem;
 }
