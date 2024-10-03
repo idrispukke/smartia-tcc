@@ -46,6 +46,8 @@ header {
     display: flex;
     align-items: center;
     justify-content: end;
+    gap: 2rem;
+    font-size: larger;
 }
 
 #meio {
@@ -242,7 +244,7 @@ main {
 
 #time {
     width: 96%;
-    height: 30rem;
+    height: 26rem;
 }
 
 #emp-all {
