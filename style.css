@@ -1,6 +1,7 @@
 * {
     border: 0;
     margin: 0;
+    box-sizing: border-box;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     text-decoration: none;
 }
@@ -22,11 +23,11 @@
 
 body {
     background: url('img/LandingPage.png') no-repeat;
-background-size: cover;
+    background-size: cover;
     color: white;
 }
 
-a{
+a {
     color: white;
 }
 
@@ -38,11 +39,13 @@ header {
 }
 
 .cabeçalho {
+    display: flex;
     width: 100%;
+    justify-content: space-between;
     padding: 1rem;
 }
 
-#separa{
+#separa {
     display: flex;
     align-items: center;
     justify-content: end;
@@ -111,7 +114,7 @@ header {
 }
 
 main {
-    padding-top: 20rem;
+    padding-top: 15rem;
     text-align: center;
 }
 
@@ -168,8 +171,7 @@ main {
 .card {
     display: block;
     position: relative;
-    max-width: 300px;
-    max-height: 100%;
+    width: 90%;
     border-radius: 10px;
     padding: 5rem 2rem;
     margin: 1.2rem;
@@ -205,7 +207,7 @@ main {
 
 .card:hover .card-title {
     transition: all 0.5s ease-out;
-    color: #5c5b5b;
+    color: #3d3d3d;
 }
 
 #ferr {
@@ -273,11 +275,11 @@ footer {
     justify-content: center;
 }
 
-h5{
+h5 {
     font-size: 1.5rem;
 }
 
-h6{
+h6 {
     font-size: 1rem;
     padding: 1rem;
 }
