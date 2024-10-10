@@ -79,6 +79,10 @@ header {
     font-size: 15px;
 }
 
+#links{
+    margin: 1rem;
+}
+
 .ferramenta {
     margin-top: 2rem;
     border: none;
