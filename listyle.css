@@ -41,26 +41,19 @@ main {
     display: flex;
     justify-content: center;
     margin: auto;
-    margin-top: 7rem;
 }
 
-#ai-child {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    margin: auto;
-    gap: 20rem;
+.ai-parent {
+    width: 90%;
 }
 
-.ai-grandchild{
-    display: flex;
-    flex-direction: column;
+#ai-grandchild{
+    background-color: #1A1B23;
+    justify-content: space-between;
+    padding: 0.5rem;
+    border-radius: 1rem;
 }
 
 h2{
-    font-size: 2rem;
-}
-
-a{
-    font-size: 1.5rem;
+    font-size: 1rem;
 }
