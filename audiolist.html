@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart.ia</title>
+    <link rel="stylesheet" href="listyle.css" />
+  </head>
+
+  <body>
+    <header>
+      <nav class="cabeçalho">
+        <img
+          class="logo"
+          src="img/logo.png"
+          alt="Logo Smart.ia"
+          width="50rem"
+        />
+        <div id="separa">
+          <a href="./index.html">Página inicial</a>
+          <a href="./index.html#about-ferr">Sobre a ferramenta</a>
+          <a href="./index.htmlabout-us">Sobre nós</a>
+          <a href="./index.html#contacts">Contatos</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="ai-parent">
+        <div style="display: flex; align-items: center">
+
+            <div class="collapse-container">
+                <div class="collapse-title" onclick="toggleCollapse()">Lista de IAs de Áudio</div>
+                <div class="collapse-content" id="collapseContent">
+            <ul>
+              <li><a class="detail" href="./imglist.html">Lista de IAs de Imagem</a></li>
+              <li><a class="detail" href="./vidlist.html">Lista de IAs de Vídeo</a></li>
+              <li><a class="detail" href="./textlist.html">Lista de IAs de Texto</a></li>
+            </ul>
+        </div>
+    </div>
+
+          <!--
+               <h1>Lista de IAs de Texto</h1>
+            
+                <a href=""><i data-lucide="chevron-down"></i></a>
+            -->
+        </div>
+        <div id="ai-child">
+          <div id="ai-grandchild" style="display: flex; align-items: center">
+            <img class="ai-logo" src="img/deepai.png" alt="" />
+            <h2>DeepAI</h2>
+            <h3>|</h3>
+            <h2 class="fpp">Gratuito com plano pago</h2>
+            <h3>|</h3>
+            <h2>Gerar textos, vídeos, fotos e audios</h2>
+            <h3>|</h3>
+            <a class="go-to" href="https://deepai.org/">Ir para...</a>
+          </div>
+
+          <div id="ai-grandchild" style="display: flex; align-items: center">
+            <img class="ai-logo" src="img/Vidnoz_AI.png" alt="" />
+            <h2>Vidnoz AI</h2>
+            <h3>|</h3>
+            <h2 class="fpp">Gratuito com plano pago</h2>
+            <h3>|</h3>
+            <h2>Edição e criação de foto, vídeo e áudio</h2>
+            <h3>|</h3>
+            <a class="go-to" href="https://www.vidnoz.com/"
+              >Ir para...</a
+            >
+          </div>
+          
+          <div id="ai-grandchild" style="display: flex; align-items: center">
+            <img class="ai-logo" src="img/copyai.png" alt="" />
+            <h2>Copy.ai</h2>
+            <h3>|</h3>
+            <h2 class="fpp">Gratuito com plano pago</h2>
+            <h3>|</h3>
+            <h2>Gerar textos</h2>
+            <h3>|</h3>
+            <a class="go-to" href="https://www.copy.ai/">Ir para...</a>
+          </div>
+
+          <div id="ai-grandchild" style="display: flex; align-items: center">
+            <img class="ai-logo" src="img/gemini.png" alt="" />
+            <h2>Gemini</h2>
+            <h3>|</h3>
+            <h2 class="fpp">Gratuito com plano pago</h2>
+            <h3>|</h3>
+            <h2>Gerar textos</h2>
+            <h3>|</h3>
+            <a class="go-to" href="https://gemini.google.com/app">Ir para...</a>
+          </div>
+
+          <div id="ai-grandchild" style="display: flex; align-items: center">
+            <img class="ai-logo" src="img/koala.png" alt="" />
+            <h2>Koala.sh</h2>
+            <h3>|</h3>
+            <h2 class="fpp">Gratuito com plano pago</h2>
+            <h3>|</h3>
+            <h2>Gerar textos, artigos, links e fotos</h2>
+            <h3>|</h3>
+            <a class="go-to" href="https://koala.sh/">Ir para...</a>
+          </div>
+
+          <div id="ai-grandchild" style="display: flex; align-items: center">
+            <img class="ai-logo" src="img/paragraph-ai.png" alt="" />
+            <h2>Paragraph AI</h2>
+            <h3>|</h3>
+            <h2 class="fpp">Gratuito com versão pago</h2>
+            <h3>|</h3>
+            <h2>Gerar e editar textos</h2>
+            <h3>|</h3>
+            <a
+              class="go-to"
+              href="https://chromewebstore.google.com/detail/paragraphai-write-better/ieidddkeimflpkghaodhddcmlclcliaa?pli=1"
+              >Ir para...</a
+            >
+          </div>
+
+          <div id="ai-grandchild" style="display: flex; align-items: center">
+            <img class="ai-logo" src="img/simplified.png" alt="" />
+            <h2>Simplified</h2>
+            <h3>|</h3>
+            <h2 class="fpp">Gratuito com versão pago</h2>
+            <h3>|</h3>
+            <h2>Gerar textos com auxilio de vários modelos</h2>
+            <h3>|</h3>
+            <a class="go-to" href="https://simplified.com/pt/ai-writer"
+              >Ir para...</a
+            >
+          </div>
+
+          <!--
+                <div id="ai-grandchild" style="display: flex; align-items: center; ">
+                    <img class="ai-logo" src="img/chatsonic.png" alt="">
+                    <h2>Chatsonic</h2>
+                    <h3>|</h3>
+                    <h2 class="free">Gratuito</h2>
+                    <h3>|</h3>
+                    <h2>Criar e gerar textos</h2>
+                    <h3>|</h3>
+                    <a class="go-to" href="https://app.writesonic.com/pt-pt/library/35f82656-eaf9-46dd-becb-2c9e9fd55d10/all">Ir para...</a>
+                </div>
+
+                <div id="ai-grandchild" style="display: flex; align-items: center; ">
+                    <img class="ai-logo" src="img/gemini.png" alt="">
+                    <h2>Geminic</h2>
+                    <h3>|</h3>
+                    <h2 class="paid">Pago</h2>
+                    <h3>|</h3>
+                    <h2>Criar e gerar textos</h2>
+                    <h3>|</h3>
+                    <a class="go-to" href="https://gemini.google.com/app">Ir para...</a>
+                </div>
+
+-->
+        </div>
+      </div>
+    </main>
+
+    <script>
+      function toggleCollapse() {
+            var content = document.getElementById("collapseContent");
+            content.classList.toggle("show");
+        }
+    </script>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
+</html>
