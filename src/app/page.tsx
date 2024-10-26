@@ -1,11 +1,19 @@
-import Hero from "@/components/hero";
-import AboutTool from "@/components/sobre";
+import Hero from "@/components/main/hero";
+import AboutFunctions from "@/components/main/AboutFunctions";
+import AboutTool from "@/components/main/AboutTool";
+import AboutTeam from "@/components/main/aboutTeam";
+import AboutEnterprise from "@/components/main/AboutEnterprise";
+import Footer from "@/components/main/footer";
 
 export default function Home() {
   return (
-    <div className="bg-gray-900">
+    <div className="bg-gray-900 flex flex-col m-auto">
       <Hero/>
+      <AboutFunctions/>
       <AboutTool/>
+      <AboutTeam/>
+      <AboutEnterprise/>
+      <Footer/>
     </div>
   );
 }
