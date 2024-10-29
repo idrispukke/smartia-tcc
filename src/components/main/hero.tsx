@@ -25,12 +25,17 @@ export default function Hero() {
                <div className="flex flex-col justify-center items-center h-full ">
                     <Image width={500} height={400} src={SmartiaIMG.src} alt="Logo Completa Smart.IA" />
                     <div className="flex flex-col justify-center items-center gap-2">
-                         <h2 className="text-2xl mt-4">Clique aqui para utilizar:</h2>
                          <Link
-                              href="/ferramenta"
+                              href="/tool"
                               className=" py-2 px-6 text-2xl bg-gradient-to-r from-blue-500 to-cyan-400 rounded-lg "
                          >
-                              Ferramenta
+                              Acesar Ferramenta
+                         </Link>
+                         <Link
+                              href="/ia-list"
+                              className=" py-1 px-4 text-lg bg-gradient-to-t from-blue-500 to-cyan-400 rounded-lg "
+                         >
+                              Ver Lista de IAs
                          </Link>
                     </div>
                </div>

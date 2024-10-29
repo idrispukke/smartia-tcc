@@ -33,11 +33,11 @@ function TeamMemberCard({ name, role, src }: TeamMemberCardProps) {
 }
 
 const teamMembers = [
-     { id: 1, name: "Ana Lyce", role: "Ceo", src: AnaImg.src },
-     { id: 2, name: "Duda", role: "Diretora de Marketing", src: DudaImg.src },
-     { id: 3, name: "Hendry", role: "Diretora de Operações", src: HendryImg.src },
-     { id: 4, name: "Kevin", role: "Diretora de Tecnologia", src: KevinImg.src },
-     { id: 5, name: "Rhaina", role: "Diretora de Relações", src: RaiImg.src },
+     { id: 1, name: "Ana Lyce", role: "CEO", src: AnaImg.src },
+     { id: 2, name: "Maria Eduarda", role: "Diretora de Marketing", src: DudaImg.src },
+     { id: 3, name: "Hendry Iasmin", role: "Diretora de Operações", src: HendryImg.src },
+     { id: 4, name: "Keven Figueiral", role: "Diretora de Tecnologia", src: KevinImg.src },
+     { id: 5, name: "Rhaiana Esquerdo", role: "Diretora de Relações", src: RaiImg.src },
 ];
 
 export default function AboutTeam() {
