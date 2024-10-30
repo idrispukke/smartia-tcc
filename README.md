@@ -6,7 +6,7 @@
 ![Bitbucket open issues](https://img.shields.io/bitbucket/issues/iuricode/README-template?style=for-the-badge)
 ![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/iuricode/README-template?style=for-the-badge)
 
-<img src="../img/smartia.png" alt="smartia beta">
+<img src="./img/smartia.png" alt="smartia beta">
 
 > Nossa ferramenta combina várias IAs para auxiliar sua geração de conteúdo!
 
