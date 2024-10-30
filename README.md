@@ -18,12 +18,14 @@ Para usar <nome_do_projeto>, siga estas etapas:
 - Aperte o botão "Ferramenta".
 - Preencha os campos com o que for pedido!
 
-E pronto, você poderá criar seus próprios vídeos e legendas!
+E pronto, você poderá criar seus próprios vídeos, fotos e textos!
 
 ### Ajustes e melhorias
 
 O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas para as seguintes tarefas:
 
+- [x] Finalizar o layout usando Next.js.
+- [x] Adicionar APis de geração de texto.
 - [ ] Adicionar APIs de geração de vídeo.
 - [ ] Adicionar APIs de geração de áudio.
 - [ ] Adicionar APIs de geração de foto.
