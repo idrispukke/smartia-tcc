@@ -20,7 +20,7 @@ Para usar <Smart.IA>, siga estas etapas:
 
 E pronto, você poderá criar seus próprios vídeos, fotos e textos!
 
-> [!NOTA]
+> [!NOTE]
 > Nossa ferramenta está em estágio beta, então bugs podem ocorrer. 
 
 ### Ajustes e melhorias
