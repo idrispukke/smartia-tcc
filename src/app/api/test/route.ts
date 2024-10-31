@@ -36,8 +36,8 @@ function extractSolutions(markdownText: string): ExtractedData {
         legenda: item.legenda,
       })),
     };
-  } catch (error: any) {
-    throw new Error('Erro ao parsear JSON: ' + error.message);
+  } catch (error) {
+    throw new Error('Erro ao parsear JSON: ' + error);
   }
 }
 
@@ -55,8 +55,8 @@ export async function POST(request: NextRequest) {
     const result = await model.generateContent(prompt);
 
     // Extract the response text
-    const ideias = extractSolutions(result.response.text());
-    console.log(ideias)
+    const ideias = extractSolutions(result.response.text())
+    
     return Response.json(ideias);
   } catch (error) {
     console.error('Erro ao gerar conteúdo:', error);

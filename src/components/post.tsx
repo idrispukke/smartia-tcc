@@ -47,7 +47,7 @@ export default function PostGenerator({ title, idea, caption, hashtags }: PostGe
                               <div className="flex items-center justify-between mb-2">
                                    <h3 className="text-sm font-semibold flex items-center">
                                         <MessageSquare className="w-4 h-4 mr-2 text-blue-400" />
-                                        Idea
+                                        Ideia
                                    </h3>
                                    <Button
                                         variant="ghost"

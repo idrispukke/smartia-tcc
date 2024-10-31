@@ -18,6 +18,7 @@ type ToasterToast = ToastProps & {
   action?: ToastActionElement
 }
 
+
 const actionTypes = {
   ADD_TOAST: "ADD_TOAST",
   UPDATE_TOAST: "UPDATE_TOAST",
@@ -33,7 +34,7 @@ function genId() {
 }
 
 type ActionType = typeof actionTypes
-
+console.log(actionTypes)
 type Action =
   | {
       type: ActionType["ADD_TOAST"]

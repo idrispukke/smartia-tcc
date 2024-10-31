@@ -5,12 +5,8 @@ import { useForm, Controller } from 'react-hook-form'
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import HashtagsCard from '@/components/hashTagsCard'
 import axios from 'axios'
-import IdeasDisplay from '@/components/ideiaCard'
 import PostGenerator from '@/components/post'
-import { ScrollArea } from '@radix-ui/react-scroll-area'
-import { ScrollBar } from '@/components/ui/scroll-area'
 
 type FormData = {
      ideia: string;
@@ -82,8 +78,8 @@ export default function Component() {
 
 
                {/* Seção do Formulário */}
-               <div className="p-6 w-[30%] bg-slate-900 rounded-sm shadow-xl">
-                    <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+               <div className="p-6 h-[40%] w-[30%] bg-slate-900 rounded-sm shadow-xl">
+                    <form onSubmit={handleSubmit(onSubmit)} className="space-y-2">
                     <label > Como vc deseja sua postagem?</label>
                          <Controller
                               name="ideia"
