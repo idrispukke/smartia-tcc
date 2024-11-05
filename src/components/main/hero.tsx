@@ -1,6 +1,6 @@
 import { LuArrowDownCircle } from "react-icons/lu";
 import SmartiaIMG from "@/assets/img/smartia.png"
-import heroBg from '@/assets/img/heroBg.png'
+import heroBg from '@/assets/img/background/heroBg.png'
 import Image from "next/image";
 import Link from "next/link";
 

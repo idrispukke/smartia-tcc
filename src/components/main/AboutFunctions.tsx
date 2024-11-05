@@ -1,6 +1,6 @@
 import { ArrowUpRight, Camera, Save } from "lucide-react"
 import { ActionButton } from "../actionButton"
-import aboutFunctionsBg from '@/assets/img/aboutFunctionsBg.png'
+import aboutFunctionsBg from '@/assets/img/background/aboutFunctionsBg.png'
 
 const cards = [
      {

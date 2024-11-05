@@ -1,4 +1,4 @@
-import ListBg from '@/assets/img/listBg.png'
+import ListBg from '@/assets/img/background/listBg.png'
 import Header from '@/components/header'
 import RowTable from '@/components/rowTable'
 import { Table, TableHeader, TableRow, TableHead, TableBody } from '@/components/ui/table'

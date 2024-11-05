@@ -1,4 +1,4 @@
-import aboutTeamBg from '@/assets/img/aboutTeam.png'
+import aboutTeamBg from '@/assets/img/background/aboutTeam.png'
 import Image from "next/image";
 import AnaImg from "@/assets/img/member/ana.png";
 import DudaImg from "@/assets/img/member/duda.png";

@@ -1,4 +1,4 @@
-import aboutEnterprise from '@/assets/img/aboutEnterprise.png'
+import aboutEnterprise from '@/assets/img/background/aboutEnterprise.png'
 import Link from 'next/link'
 
 export default function AboutEnterprise() {

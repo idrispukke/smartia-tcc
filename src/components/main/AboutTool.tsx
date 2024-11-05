@@ -1,7 +1,7 @@
 import Image from "next/image";
 import IA from '../../assets/img/muie.png'
 import Link from "next/link";
-import aboutToolBg from '@/assets/img/aboutToolBg.png'
+import aboutToolBg from '@/assets/img/background/aboutToolBg.png'
 
 export default function AboutTool() {
      return (
