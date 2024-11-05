@@ -5,17 +5,19 @@ import AboutTeam from "@/components/main/aboutTeam";
 import AboutEnterprise from "@/components/main/AboutEnterprise";
 import Footer from "@/components/main/footer";
 import AboutBook from "@/components/main/aboutBook";
+import Header from "@/components/header";
 
 export default function Home() {
   return (
     <div className="bg-gray-900 flex flex-col m-auto">
-      <Hero/>
-      <AboutFunctions/>
-      <AboutTool/>
-      <AboutTeam/>
-      <AboutEnterprise/>
-      <AboutBook/>
-      <Footer/>
+      <Header />
+      <Hero />
+      <AboutFunctions />
+      <AboutTool />
+      <AboutTeam />
+      <AboutEnterprise />
+      <AboutBook />
+      <Footer />
     </div>
   );
 }
