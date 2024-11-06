@@ -46,7 +46,7 @@ function extractSolutions(markdownText: string): ExtractedData {
 export async function POST(request: NextRequest) {
   try {
     const { ideia, tipo, plataforma } = await request.json() as { ideia: string; tipo: string; plataforma: string };
-    console.log(ideia, tipo, plataforma)
+  
     const genAI = new GoogleGenerativeAI("AIzaSyD6jnRztM7ET-fDbjFV8mEBgKG66KeRuLg"); // Use environment variable for API key
     const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
@@ -56,7 +56,7 @@ export async function POST(request: NextRequest) {
 
     // Extract the response text
     const ideias = extractSolutions(result.response.text())
-    
+
     return Response.json(ideias);
   } catch (error) {
     console.error('Erro ao gerar conteúdo:', error);

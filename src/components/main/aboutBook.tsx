@@ -1,7 +1,7 @@
 import Image from "next/image";
-import IA from '../../assets/img/muie.png'
 import Link from "next/link";
 import aboutToolBg from '@/assets/img/background/aboutToolBg.png'
+import book from '@/assets/img/book.jpg'
 
 export default function AboutBook() {
      return (
@@ -16,26 +16,25 @@ export default function AboutBook() {
 
                <div>
                     <Image
-                         src={IA.src}
-                         width={400}
-                         height={400}
+                         src={book.src}
+                         width={300}
+                         height={300}
                          alt=""
                     />
 
                </div>
                <div className="w-[40%] flex  gap-16 flex-col justify-center items-center">
                     <h1 className="text-5xl self-start">
-                         Como Fazer Prompts
+                         Baixe agora nosso Ebook gratuito!
                     </h1>
                     <p className="text-justify text-xl">
-
-                         Nossa ferramenta reúne Leonard.ai, ChatGPT e, em breve, novas inteligências artificiais, todas desenvolvidas para oferecer criação de conteúdo personalizada, com aprendizado contínuo e resultados otimizados para diferentes plataformas digitais.
+                         Nosso time disponibilizou para você um Ebook sobre como fazer prompts e melhorar suas respostas utilizando IAs e o melhor totalmente gratuito. Acesse aqui
                     </p>
                     <Link
-                         href="/ferramenta"
+                         href="/assets/book.pdf"
                          className=" py-2 px-6 text-3xl bg-gradient-to-r from-blue-500 to-cyan-400 rounded-lg hover:from-blue-600 hover:to-cyan-500 "
                     >
-                        Acessar e-book Gratuito
+                         Acessar e-book Gratuito
                     </Link>
                </div>
           </section>
