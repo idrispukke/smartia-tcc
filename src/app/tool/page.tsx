@@ -11,6 +11,7 @@ import SmartiaIMG from "@/assets/img/logoSmartia.png"
 import { Loader2 } from 'lucide-react'
 import Image from 'next/image'
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from '@/components/ui/carousel'
+import { useToast } from '@/hooks/use-toast'
 
 type FormData = {
      ideia: string;
@@ -27,9 +28,8 @@ interface Ideia {
 
 export default function Component() {
      const [ideias, setIdeias] = useState<Ideia[] | null>(null);
-     const [message, setMessage] = useState<string | null>(null);
-     const [error, setError] = useState<string | null>(null);
      const [isFetched, setIsFetched] = useState<boolean>(false); // Estado para verificar se a requisição foi completada
+     const { toast } = useToast()
 
      const { control, handleSubmit, reset } = useForm<FormData>({
           defaultValues: {
@@ -45,15 +45,24 @@ export default function Component() {
                     const response = await axios.post('http://localhost:3000/api/test', {
                          ideia: data.ideia, tipo: data.tipo, plataforma: data.plataforma
                     });
-                    setMessage('Postagem Gerada com sucesso ');
-                    setError(null);
                     setIdeias(response.data);
                     setIsFetched(true); // Marca como requisitado
                     reset();
 
-               } catch (error) {
-                    console.log(error);
-                    setError('Erro ao enviar dados.'); // Defina uma mensagem de erro apropriada
+                    toast({
+                         title: "Sucesso!",
+                         description: "Seus posts foram criados com sucesso",
+                         variant: "default",
+                    })
+
+               } catch (error: any) {
+                    console.log(error.message);
+                    toast({
+                         title: "Erro!",
+                         description: "Ocorreu um erro criar seus posts",
+                         variant: "destructive",
+                         
+                    })
                     setIsFetched(false); // Requisição não foi bem-sucedida
                }
           })
@@ -122,15 +131,15 @@ export default function Component() {
                </div>
 
                {/* Seção de Exibição de Posts */}
-               <div className="w-full h-[80%]  flex flex-col gap-4 justify-center items-center border-none ">
+               <div className="w-full h-[70%]  flex flex-col gap-4 justify-center items-center border-none ">
                     {isFetched && ideias && (
                          <>
-                              <Carousel className='w-[60%] flex items-center justify-center'>
+                              <Carousel className='w-[50%] flex items-center justify-center'>
                                    <CarouselContent>
                                         {ideias.map((ideia, index) => (
                                              <CarouselItem
                                                   key={index}
-                                                  >
+                                             >
                                                   <PostGenerator
                                                        option={index + 1}
                                                        title={ideia.title}
@@ -143,8 +152,8 @@ export default function Component() {
                                         ))}
 
                                    </CarouselContent>
-                                   <CarouselPrevious  variant={'default'}/>
-                                   <CarouselNext  variant={'default'}/>
+                                   <CarouselPrevious variant={'default'} />
+                                   <CarouselNext variant={'default'} />
                               </Carousel>
                          </>
                     )}
