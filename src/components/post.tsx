@@ -59,7 +59,7 @@ export default function PostGenerator({ title, idea, option, caption, hashtags }
                                    <span className="sr-only">Copy Idea</span>
                               </Button>
                          </div>
-                         <div className="h-24 w-full rounded-md border border-gray-700">
+                         <div className=" w-full rounded-md border border-gray-700">
                               <p className="text-sm p-2">{idea}</p>
                          </div>
                     </div>

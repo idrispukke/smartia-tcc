@@ -22,15 +22,11 @@ interface Ideia {
      title: string;
      ideia: string;
      legenda: string;
-}
-
-interface IdeiasData {
      hashtags: string[];
-     ideias: Ideia[];
 }
 
 export default function Component() {
-     const [ideias, setIdeias] = useState<IdeiasData | null>(null);
+     const [ideias, setIdeias] = useState<Ideia[] | null>(null);
      const [message, setMessage] = useState<string | null>(null);
      const [error, setError] = useState<string | null>(null);
      const [isFetched, setIsFetched] = useState<boolean>(false); // Estado para verificar se a requisição foi completada
@@ -131,7 +127,7 @@ export default function Component() {
                          <>
                               <Carousel className='w-[60%] flex items-center justify-center'>
                                    <CarouselContent>
-                                        {ideias.ideias.map((ideia, index) => (
+                                        {ideias.map((ideia, index) => (
                                              <CarouselItem
                                                   key={index}
                                                   >
@@ -140,7 +136,7 @@ export default function Component() {
                                                        title={ideia.title}
                                                        idea={ideia.ideia}
                                                        caption={ideia.legenda}
-                                                       hashtags={ideias.hashtags}
+                                                       hashtags={ideia.hashtags}
                                                   />
                                              </CarouselItem>
 
