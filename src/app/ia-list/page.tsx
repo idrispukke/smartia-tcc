@@ -44,7 +44,7 @@ export default function ListIa() {
                                              IAsTexto.map((ia, index) => {
                                                   return (
                                                        <RowTable
-                                                            key={index}
+                                                            key={index + 1}
                                                             nome={ia.nome}
                                                             link={ia.link}
                                                             planos={ia.planos}
@@ -72,7 +72,7 @@ export default function ListIa() {
                                              IAsVideo.map((ia, index) => {
                                                   return (
                                                        <RowTable
-                                                            key={index}
+                                                            key={index + 1}
                                                             nome={ia.nome}
                                                             link={ia.link}
                                                             planos={ia.planos}
@@ -100,7 +100,7 @@ export default function ListIa() {
                                              IAsImagem.map((ia, index) => {
                                                   return (
                                                        <RowTable
-                                                            key={index}
+                                                            key={index + 1}
                                                             nome={ia.nome}
                                                             link={ia.link}
                                                             planos={ia.planos}

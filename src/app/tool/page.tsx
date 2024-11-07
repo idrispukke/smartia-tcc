@@ -38,13 +38,16 @@ export default function Component() {
                plataforma: 'Instagram'
           }
      });
+
      const [isPending, startTransition] = useTransition()
+
      const onSubmit = async (data: { ideia: string; tipo: string; plataforma: string }) => {
           startTransition(async () => {
                try {
                     const response = await axios.post('http://localhost:3000/api/test', {
                          ideia: data.ideia, tipo: data.tipo, plataforma: data.plataforma
                     });
+
                     setIdeias(response.data);
                     setIsFetched(true); // Marca como requisitado
                     reset();
@@ -52,7 +55,7 @@ export default function Component() {
                     toast({
                          title: "Sucesso!",
                          description: "Seus posts foram criados com sucesso",
-                         variant: "default",
+                         variant: "default"
                     })
 
                } catch (error: any) {
@@ -61,7 +64,7 @@ export default function Component() {
                          title: "Erro!",
                          description: "Ocorreu um erro criar seus posts",
                          variant: "destructive",
-                         
+
                     })
                     setIsFetched(false); // Requisição não foi bem-sucedida
                }
@@ -71,9 +74,9 @@ export default function Component() {
 
 
      return (
-          <div className="h-screen bg-gradient-to-br from-teal-500 to-blue-900 flex  justify-center items-center gap-1 p-4">
+          <div className="h-screen w-screen bg-gradient-to-br from-teal-500 to-blue-900 flex  justify-center items-center gap-1 p-4">
                {/* Seção do Formulário */}
-               <div className="p-6 h-[60%] w-[40%] bg-slate-900 rounded-sm flex flex-col items-center justify-center ml-10 gap-8 shadow-xl">
+               <div className="p-6 h-[60%]  bg-slate-900 rounded-sm flex flex-col items-center justify-center ml-10 gap-8 shadow-xl">
                     <Image width={300} height={400} src={SmartiaIMG.src} alt="Logo Completa Smart.IA" />
                     <form onSubmit={handleSubmit(onSubmit)} className="space-y-5 text-center w-full ">
                          <label> Como vc deseja que sua postagem seja?</label>
@@ -131,7 +134,7 @@ export default function Component() {
                </div>
 
                {/* Seção de Exibição de Posts */}
-               <div className="w-full h-[70%]  flex flex-col gap-4 justify-center items-center border-none ">
+               <div className=" h-[70%] w-[70%] ful flex flex-col gap-4 justify-center items-center border-none ">
                     {isFetched && ideias && (
                          <>
                               <Carousel className='w-[50%] flex items-center justify-center'>
