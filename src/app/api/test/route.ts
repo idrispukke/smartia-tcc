@@ -1,37 +1,44 @@
+import { BadRequestError } from '@/error/bad-request';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import type { NextRequest } from 'next/server';
 
-
 function extractSolutions(markdown: string) {
-  console.log(markdown)
-  const jsonMatch = markdown.match(/```json\s*([\s\S]*?)\s*```/i)
+  console.log(markdown);
+  const jsonMatch = markdown.match(/```json\s*([\s\S]*?)\s*```/i);
 
   if (!jsonMatch) {
-    throw new Error("JSON não encontrado no markdown fornecido.");
+    throw new Error('JSON não encontrado no markdown fornecido.');
   }
 
   try {
     const jsonArray = JSON.parse(jsonMatch[1].trim());
 
-    console.log(jsonArray)
+    console.log(jsonArray);
     // Verifica se o JSON é um array
     if (!Array.isArray(jsonArray)) {
-      throw new Error("O JSON extraído não é um array.");
+      throw new Error('O JSON extraído não é um array.');
     }
 
-    return jsonArray
+    return jsonArray;
   } catch (error) {
-    throw new Error("Erro ao parsear o JSON: " + error);
+    if (error instanceof BadRequestError) {
+      console.log(error);
+      throw new BadRequestError(error.message);
+    }
   }
 }
 
-
 export async function POST(request: NextRequest) {
+  const { ideia, estilo, plataforma } = (await request.json()) as {
+    ideia: string;
+    estilo: string;
+    plataforma: string;
+  };
 
-  const { ideia, estilo, plataforma } = await request.json() as { ideia: string; estilo: string; plataforma: string };
-
-  const genAI = new GoogleGenerativeAI("AIzaSyBScCLyZ6YY5MD_DtN2oJnChJydGD9RIXU"); // Use environment variable for API key
-  const model = genAI.getGenerativeModel({ model: "gemini-1.0-pro" });
+  const genAI = new GoogleGenerativeAI(
+    'AIzaSyBScCLyZ6YY5MD_DtN2oJnChJydGD9RIXU'
+  ); // Use environment variable for API key
+  const model = genAI.getGenerativeModel({ model: 'gemini-1.0-pro' });
 
   const prompt = `
     Por favor, atue como James, especialista em social media, copywriting e storytelling, focado em se conectar com o público e ajudá-los a criar posts inovadores, criativos e atuais.
@@ -49,14 +56,10 @@ export async function POST(request: NextRequest) {
     [
       { title: string, ideia: string, legenda: string, hashtags: string[] },
     ]
-  `
-
-
+  `;
 
   const result = await model.generateContent(prompt);
-  const ideias = extractSolutions(result.response.text())
-
+  const ideias = extractSolutions(result.response.text());
 
   return Response.json(ideias);
-
 }
