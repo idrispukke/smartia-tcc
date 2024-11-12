@@ -1,6 +1,5 @@
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import type { NextRequest } from 'next/server';
-import MarkdownIt from 'markdown-it';
 
 
 function extractSolutions(markdown: string) {

@@ -58,8 +58,8 @@ export default function Component() {
                          variant: "default"
                     })
 
-               } catch (error: any) {
-                    console.log(error.message);
+               } catch (error) {
+                    console.log(error);
                     toast({
                          title: "Erro!",
                          description: "Ocorreu um erro criar seus posts",
