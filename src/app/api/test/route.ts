@@ -30,7 +30,7 @@ export async function POST(request: NextRequest) {
 
   const { ideia, estilo, plataforma } = await request.json() as { ideia: string; estilo: string; plataforma: string };
 
-  const genAI = new GoogleGenerativeAI("AIzaSyCJAyL1ZOK3v4Sg_xDZLYMlflKNurJMmMk"); // Use environment variable for API key
+  const genAI = new GoogleGenerativeAI("AIzaSyBScCLyZ6YY5MD_DtN2oJnChJydGD9RIXU"); // Use environment variable for API key
   const model = genAI.getGenerativeModel({ model: "gemini-1.0-pro" });
 
   const prompt = `
@@ -47,7 +47,7 @@ export async function POST(request: NextRequest) {
     Preciso que sua saida seja APENAS no FORMATO JSON, seguindo o modelo a seguir :
 
     [
-      { "title": "string", "ideia": "string", "legenda": "string", "hashtags": string[] },
+      { title: string, ideia: string, legenda: string, hashtags: string[] },
     ]
   `
 
