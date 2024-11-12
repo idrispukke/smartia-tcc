@@ -1,14 +1,15 @@
 import Link from "next/link"
-import { TableCell, TableRow } from "./ui/table"
 import { Button } from "./ui/button"
 import { Badge } from "./ui/badge"
+import { Card, CardContent } from "./ui/card"
 
 interface RowsProps {
     nome: string,
     planos: string[],
-    usos: string[],
+    features: string[],
     link: string
 }
+
 const getBadgeColor = (uso: string) => {
     switch (uso) {
         case 'Textos':
@@ -30,44 +31,38 @@ const getBadgeColor = (uso: string) => {
     };
 }
 
-export default function RowTable({ link, nome, planos, usos }: RowsProps) {
+export default function RowTable({ link, nome, planos, features }: RowsProps) {
     return (
-        <TableRow  className="w-full bg-zinc-900 px-2 mt-1 py-2 text-center items-center">
-            <TableCell className="p-2 font-thin text-sm"> {nome}</TableCell>
-            <TableCell>
-                {
-                    planos.map((plano, index) => {
-                        return (
-                            <Badge
-                                key={index}
-                                className={`mr-1 text-xs ${plano === 'Gratuito' ? 'bg-green-500/30' : plano === 'Plano pago' ? 'bg-blue-500/30' : 'bg-slate-500'}`}
-                            >
-                                {plano}
-                            </Badge>
-                        )
-                    })
-                }
-            </TableCell>
-            <TableCell className="grid grid-cols-2 gap-1">
-                {
-                    usos.map((uso, index) => {
-                        return (
-                            <Badge key={index} className={`text-xs text-center ${getBadgeColor(uso)}`}>
-                                {uso}
-                            </Badge>
-                        )
-                    })
-                }
-            </TableCell>
-            <TableCell>
-                <Button className="text-xs py-1 px-2">
-                    <Link href={link}>
-                        Acessar
-                    </Link>
-                </Button>
-            </TableCell>
-        </TableRow>
-
+        <Card className="w-full mt-2">
+            <CardContent className="p-1 ">
+                <div className="flex items-center justify-between space-x-4">
+                    <div className="flex-shrink-0 w-1/5">
+                        <h2 className="text-xl font-semibold">{nome}</h2>
+                    </div>
+                    <div className="flex-shrink-0 w-1/5">
+                        <ul className="text-sm text-muted-foreground">
+                            {planos.map((plan, index) => (
+                                <li key={index}>{plan}</li>
+                            ))}
+                        </ul>
+                    </div>
+                    <div className="flex-grow w-1/5">
+                        <div className="grid grid-cols-2 gap-1">
+                            {features.map((feature, index) => (
+                                <Badge key={index} className={`text-sm ${getBadgeColor(feature)}`}>
+                                    {feature}
+                                </Badge>
+                            ))}
+                        </div>
+                    </div>
+                    <div className="flex-shrink-0 w-1/5">
+                        <Button className="w-full" asChild>
+                            <Link href={link}>Learn More</Link>
+                        </Button>
+                    </div>
+                </div>
+            </CardContent>
+        </Card>
     )
 }
 

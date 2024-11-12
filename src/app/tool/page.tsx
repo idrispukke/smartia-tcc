@@ -8,10 +8,11 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import axios from 'axios'
 import PostGenerator from '@/components/post'
 import SmartiaIMG from "@/assets/img/logoSmartia.png"
-import { Loader2 } from 'lucide-react'
+import { ArrowLeft, Loader2 } from 'lucide-react'
 import Image from 'next/image'
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from '@/components/ui/carousel'
 import { useToast } from '@/hooks/use-toast'
+import Link from 'next/link'
 
 type FormData = {
      ideia: string;
@@ -76,61 +77,66 @@ export default function Component() {
      return (
           <div className="h-screen w-screen bg-gradient-to-br from-teal-500 to-blue-900 flex  justify-center items-center gap-1 p-4">
                {/* Seção do Formulário */}
-               <div className="p-6 h-[60%]  bg-slate-900 rounded-sm flex flex-col items-center justify-center ml-10 gap-8 shadow-xl">
-                    <Image width={300} height={400} src={SmartiaIMG.src} alt="Logo Completa Smart.IA" />
-                    <form onSubmit={handleSubmit(onSubmit)} className="space-y-5 text-center w-full ">
-                         <label> Como vc deseja que sua postagem seja?</label>
-                         <Controller
-                              name="ideia"
-                              control={control}
-                              render={({ field }) => (
-                                   <Input
-                                        {...field}
-                                        placeholder="Descreva sua ideia"
-                                        className="bg-gray-700 text-white border-gray-600"
+               <div className="p-6 h-[65%]  bg-slate-900 rounded-sm flex flex-col  gap-8 shadow-xl">
+                    <Link href="/" className='self-start'>
+                         <ArrowLeft />
+                    </Link>
+                    <div>
+                         <Image width={300} height={400} src={SmartiaIMG.src} alt="Logo Completa Smart.IA" />
+                         <form onSubmit={handleSubmit(onSubmit)} className="space-y-5 text-center w-full ">
+                              <label> Como vc deseja que sua postagem seja?</label>
+                              <Controller
+                                   name="ideia"
+                                   control={control}
+                                   render={({ field }) => (
+                                        <Input
+                                             {...field}
+                                             placeholder="Descreva sua ideia"
+                                             className="bg-gray-700 text-white border-gray-600"
+                                        />
+                                   )}
+                              />
+                              <div className="grid grid-cols-2 gap-4">
+                                   <Controller
+                                        name="tipo"
+                                        control={control}
+                                        render={({ field }) => (
+                                             <Select onValueChange={field.onChange} defaultValue={field.value}>
+                                                  <SelectTrigger className="bg-gray-700 text-white border-gray-600">
+                                                       <SelectValue placeholder="Select option" />
+                                                  </SelectTrigger>
+                                                  <SelectContent>
+                                                       <SelectItem value="Formal">Formal</SelectItem>
+                                                       <SelectItem value="Informal">Informal</SelectItem>
+                                                  </SelectContent>
+                                             </Select>
+                                        )}
                                    />
-                              )}
-                         />
-                         <div className="grid grid-cols-2 gap-4">
-                              <Controller
-                                   name="tipo"
-                                   control={control}
-                                   render={({ field }) => (
-                                        <Select onValueChange={field.onChange} defaultValue={field.value}>
-                                             <SelectTrigger className="bg-gray-700 text-white border-gray-600">
-                                                  <SelectValue placeholder="Select option" />
-                                             </SelectTrigger>
-                                             <SelectContent>
-                                                  <SelectItem value="Formal">Formal</SelectItem>
-                                                  <SelectItem value="Informal">Informal</SelectItem>
-                                             </SelectContent>
-                                        </Select>
-                                   )}
-                              />
-                              <Controller
-                                   name="plataforma"
-                                   control={control}
-                                   render={({ field }) => (
-                                        <Select onValueChange={field.onChange} defaultValue={field.value}>
-                                             <SelectTrigger className="bg-gray-700 text-white border-gray-600">
-                                                  <SelectValue placeholder="Select option" />
-                                             </SelectTrigger>
-                                             <SelectContent>
-                                                  <SelectItem value="Instagram">Instagram</SelectItem>
-                                                  <SelectItem value="Twitter">Twitter</SelectItem>
-                                                  <SelectItem value="Facebook">Facebook</SelectItem>
-                                             </SelectContent>
-                                        </Select>
-                                   )}
-                              />
-                         </div>
-                         <Button type="submit" className="w-full bg-teal-500 hover:bg-teal-600 text-white">
-                              {isPending ? <Loader2 className='animate-spin text-white' /> :
-                                   <span>Enviar</span>}
-                         </Button>
-                         {/* {error && <p className="text-red-500">{error}</p>} 
+                                   <Controller
+                                        name="plataforma"
+                                        control={control}
+                                        render={({ field }) => (
+                                             <Select onValueChange={field.onChange} defaultValue={field.value}>
+                                                  <SelectTrigger className="bg-gray-700 text-white border-gray-600">
+                                                       <SelectValue placeholder="Select option" />
+                                                  </SelectTrigger>
+                                                  <SelectContent>
+                                                       <SelectItem value="Instagram">Instagram</SelectItem>
+                                                       <SelectItem value="Twitter">Twitter</SelectItem>
+                                                       <SelectItem value="Facebook">Facebook</SelectItem>
+                                                  </SelectContent>
+                                             </Select>
+                                        )}
+                                   />
+                              </div>
+                              <Button type="submit" className="w-full bg-teal-500 hover:bg-teal-600 text-white">
+                                   {isPending ? <Loader2 className='animate-spin text-white' /> :
+                                        <span>Enviar</span>}
+                              </Button>
+                              {/* {error && <p className="text-red-500">{error}</p>} 
                          {message && <p className="text-green-500">{message}</p>}  */}
-                    </form>
+                         </form>
+                    </div>
                </div>
 
                {/* Seção de Exibição de Posts */}

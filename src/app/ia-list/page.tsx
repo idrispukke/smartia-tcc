@@ -1,7 +1,7 @@
 import ListBg from '@/assets/img/background/listBg.png'
 import Header from '@/components/header'
 import RowTable from '@/components/rowTable'
-import { Table, TableHeader, TableRow, TableHead, TableBody } from '@/components/ui/table'
+import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 
 
@@ -20,103 +20,65 @@ export default function ListIa() {
                 `,
                }}
           >
-               <div className='w-full h-full flex flex-col items-center content-center'>
+               <div className='w-full h-full flex flex-col items-center content-center fixed'>
                     <Header />
-                    <Tabs defaultValue="text" className="flex-grow mt-24 container mx-auto ">
+                    <Tabs defaultValue="text" className=" mt-24 container mx-auto space-y-2 ">
                          <TabsList className='ml-8'>
                               <TabsTrigger value="text">IAs de Texto</TabsTrigger>
                               <TabsTrigger value="video">IAs de Video</TabsTrigger>
-                              <TabsTrigger value="audio">IAs de Audio</TabsTrigger>
+                              <TabsTrigger value="imagem">IAs de Imagem</TabsTrigger>
                          </TabsList>
-                         <TabsContent value="text">
-                              <Table className=' w-[90%] mx-auto'>
-                                   <TableHeader>
-                                        <TableRow>
-                                             <TableHead>Nome</TableHead>
-                                             <TableHead>Planos</TableHead>
-                                             <TableHead>Função</TableHead>
-                                             <TableHead>Link</TableHead>
-                                        </TableRow>
-                                   </TableHeader>
+                         <ScrollArea className=" h-[80%] flex flex-col gap-3 ">
+                              <TabsContent value="text" className='space-y1'>
+                                   {
+                                        IAsTexto.map((ia, index) => {
+                                             return (
+                                                  <RowTable
+                                                       key={index + 1}
+                                                       nome={ia.nome}
+                                                       link={ia.link}
+                                                       planos={ia.planos}
+                                                       features={ia.uso}
+                                                  />
+                                             )
+                                        })
+                                   }
+                              </TabsContent>
+                              
+                              <TabsContent value="video" className='space-y1'>
+                                   {
+                                        IAsVideo.map((ia, index) => {
+                                             return (
+                                                  <RowTable
+                                                       key={index + 1}
+                                                       nome={ia.nome}
+                                                       link={ia.link}
+                                                       planos={ia.planos}
+                                                       features={ia.uso}
+                                                  />
+                                             )
+                                        })
+                                   }
+                              </TabsContent>
 
-                                   <TableBody >
-                                        {
-                                             IAsTexto.map((ia, index) => {
-                                                  return (
-                                                       <RowTable
-                                                            key={index + 1}
-                                                            nome={ia.nome}
-                                                            link={ia.link}
-                                                            planos={ia.planos}
-                                                            usos={ia.uso}
-                                                       />
-                                                  )
-                                             })
-                                        }
-                                   </TableBody>
-                              </Table>
-                         </TabsContent>
-                         <TabsContent value="video">
-                              <Table className=' w-[90%] mx-auto'>
-                                   <TableHeader>
-                                        <TableRow>
-                                             <TableHead>Nome</TableHead>
-                                             <TableHead>Planos</TableHead>
-                                             <TableHead>Função</TableHead>
-                                             <TableHead>Link</TableHead>
-                                        </TableRow>
-                                   </TableHeader>
-
-                                   <TableBody >
-                                        {
-                                             IAsVideo.map((ia, index) => {
-                                                  return (
-                                                       <RowTable
-                                                            key={index + 1}
-                                                            nome={ia.nome}
-                                                            link={ia.link}
-                                                            planos={ia.planos}
-                                                            usos={ia.uso}
-                                                       />
-                                                  )
-                                             })
-                                        }
-                                   </TableBody>
-                              </Table>
-                         </TabsContent>
-                         <TabsContent value="audio">
-                              <Table className=' w-[90%] mx-auto'>
-                                   <TableHeader>
-                                        <TableRow>
-                                             <TableHead>Nome</TableHead>
-                                             <TableHead>Planos</TableHead>
-                                             <TableHead>Função</TableHead>
-                                             <TableHead>Link</TableHead>
-                                        </TableRow>
-                                   </TableHeader>
-
-                                   <TableBody >
-                                        {
-                                             IAsImagem.map((ia, index) => {
-                                                  return (
-                                                       <RowTable
-                                                            key={index + 1}
-                                                            nome={ia.nome}
-                                                            link={ia.link}
-                                                            planos={ia.planos}
-                                                            usos={ia.uso}
-                                                       />
-                                                  )
-                                             })
-                                        }
-                                   </TableBody>
-                              </Table>
-                         </TabsContent>
+                              <TabsContent value="imagem" className='space-y1'>
+                                   {
+                                        IAsImagem.map((ia, index) => {
+                                             return (
+                                                  <RowTable
+                                                       key={index + 1}
+                                                       nome={ia.nome}
+                                                       link={ia.link}
+                                                       planos={ia.planos}
+                                                       features={ia.uso}
+                                                  />
+                                             )
+                                        })
+                                   }
+                              </TabsContent>
+                              
+                         </ScrollArea>
                     </Tabs>
-
-                    <main >
-
-                    </main>
                </div>
           </section >
      )
@@ -166,6 +128,19 @@ const IAsTexto = [
           uso: ["Textos"],
           link: "https://simplified.com/pt/ai-writer"
      },
+     {
+          nome: "Paragraph AI",
+          planos: ["Gratuito", "Versão paga"],
+          uso: ["Textos"],
+          link: "https://chromewebstore.google.com/detail/paragraphai-write-better/ieidddkeimflpkghaodhddcmlclcliaa?pli=1"
+     },
+     {
+          nome: "Simplified",
+          planos: ["Gratuito", "Versão paga"],
+          uso: ["Textos"],
+          link: "https://simplified.com/pt/ai-writer"
+     },
+
 ]
 
 const IAsVideo = [
