@@ -23,7 +23,6 @@ import axios from 'axios';
 import { ArrowLeft, Loader2 } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
 import { useState, useTransition } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 
@@ -44,7 +43,6 @@ export default function Component() {
   const [ideias, setIdeias] = useState<Ideia[] | null>(null);
   const [isFetched, setIsFetched] = useState<boolean>(false); // Estado para verificar se a requisição foi completada
   const { toast } = useToast();
-  const router = useRouter();
 
   const { control, handleSubmit, reset } = useForm<FormData>({
     defaultValues: {
@@ -78,17 +76,14 @@ export default function Component() {
           description: 'Seus posts foram criados com sucesso',
           variant: 'default',
         });
-      } catch (error) {
+      } catch {
         toast({
           title: 'Erro!',
           description: 'Ocorreu um erro criar seus posts',
           variant: 'destructive',
         });
 
-        setIsFetched(false); // Requisição não foi bem-sucedida
-        //    setTimeout(() => {
-        //      window.location.reload();
-        //    }, 5000); // 5000 milissegundos = 5 segundosy
+        setIsFetched(false);   
       }
     });
   };

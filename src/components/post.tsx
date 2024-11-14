@@ -101,7 +101,7 @@ export default function PostGenerator({ title, idea, option, caption, hashtags }
                               </Button>
                          </div>
                          <ScrollArea className="h-24 w-full rounded-md border border-gray-700 p-2">
-                              <p className="text-sm">{hashtags.map(tag => `${tag}`).join(' ')}</p>
+                              <p className="text-sm">{hashtags.map(tag => `#${tag}`).join(' ')}</p>
                          </ScrollArea>
                     </div>
                </CardContent>

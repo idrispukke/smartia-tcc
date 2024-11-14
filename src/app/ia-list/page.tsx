@@ -1,7 +1,7 @@
 import ListBg from '@/assets/img/background/listBg.png'
 import Header from '@/components/header'
 import RowTable from '@/components/rowTable'
-import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area'
+import { ScrollArea } from '@/components/ui/scroll-area'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 
 
