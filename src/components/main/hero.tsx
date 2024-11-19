@@ -13,7 +13,7 @@ export default function Hero() {
                     backgroundPosition: 'center',
                }}>
              
-               <div className="flex flex-col justify-center items-center h-full ">
+               <div className="flex flex-col justify-center items-center l ">
                     <Image width={500} height={400} src={SmartiaIMG.src} alt="Logo Completa Smart.IA" />
                     <div className="flex flex-col justify-center items-center gap-2">
                          <Link

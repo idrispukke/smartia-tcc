@@ -27,7 +27,7 @@ export default function AboutFunctions() {
      return (
           <div 
           id="functions"
-           className=" p-6 flex flex-col md:flex-row gap-4 justify-center items-center"
+          className=" p-6 flex flex-col md:flex-row gap-4 justify-center items-center"
           style={{
                backgroundImage: `url(${aboutFunctionsBg.src})`,
                backgroundSize: 'cover',

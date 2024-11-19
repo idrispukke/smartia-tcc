@@ -33,16 +33,16 @@ const getBadgeColor = (uso: string) => {
 
 export default function RowTable({ link, nome, planos, features }: RowsProps) {
     return (
-        <Card className="w-full mt-2">
+        <Card className="w-full mt-2 bg-[#1a1b23] border-none text-white">
             <CardContent className="p-1 ">
                 <div className="flex items-center justify-between space-x-4">
                     <div className="flex-shrink-0 w-1/5">
-                        <h2 className="text-xl font-semibold">{nome}</h2>
+                        <h2 className=" ml-3 text-xl font-semibold">{nome}</h2>
                     </div>
                     <div className="flex-shrink-0 w-1/5">
-                        <ul className="text-sm text-muted-foreground">
+                        <ul className=" text-sm text-muted-foreground">
                             {planos.map((plan, index) => (
-                                <li key={index}>{plan}</li>
+                                <li className="text-white" key={index}>{plan}</li>
                             ))}
                         </ul>
                     </div>

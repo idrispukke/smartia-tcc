@@ -9,7 +9,7 @@ import Header from "@/components/header";
 
 export default function Home() {
   return (
-    <div className="bg-gray-900 flex flex-col m-auto">
+    <div className="bg-gray-900 flex flex-col  m-auto">
       <Header />
       <Hero />
       <AboutFunctions />

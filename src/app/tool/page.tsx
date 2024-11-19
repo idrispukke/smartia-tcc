@@ -61,7 +61,7 @@ export default function Component() {
   }) => {
     startTransition(async () => {
       try {
-        const response = await axios.post('https://smartia.vercel.app/api/test', {
+        const response = await axios.post('http://localhost:3000/api/test', {
           ideia: data.ideia,
           tipo: data.tipo,
           plataforma: data.plataforma,
@@ -89,9 +89,9 @@ export default function Component() {
   };
 
   return (
-    <div className="h-screen w-screen bg-gradient-to-br from-teal-500 to-blue-900 flex  justify-center items-center gap-1 p-4">
+    <div className="w-screen h-screen bg-gradient-to-br from-teal-500 to-blue-900  flex justify-center items-center flex-col md:flex-row gap-1 p-4">
       {/* Seção do Formulário */}
-      <div className="p-6 h-[65%]  bg-slate-900 rounded-sm flex flex-col  gap-8 shadow-xl">
+      <div className="p-6 mt-10 bg-slate-900 rounded-sm flex flex-col  gap-8 shadow-xl">
         <Link href="/" className="self-start">
           <ArrowLeft />
         </Link>
@@ -106,14 +106,14 @@ export default function Component() {
             onSubmit={handleSubmit(onSubmit)}
             className="space-y-5 text-center w-full "
           >
-            <label> Como vc deseja que sua postagem seja?</label>
+            <label> Qual a sua ideia para post?</label>
             <Controller
               name="ideia"
               control={control}
               render={({ field }) => (
                 <Input
                   {...field}
-                  placeholder="Descreva sua ideia"
+                  placeholder="Carros esportivos importados"
                   className="bg-gray-700 text-white border-gray-600"
                 />
               )}
@@ -174,10 +174,10 @@ export default function Component() {
       </div>
 
       {/* Seção de Exibição de Posts */}
-      <div className=" h-[70%] w-[70%] ful flex flex-col gap-4 justify-center items-center border-none ">
+      <div className="md:w-[70%] md:flex flex-col gap-4 justify-center items-center border-none ">
         {isFetched && ideias && (
           <>
-            <Carousel className="w-[50%] flex items-center justify-center">
+            <Carousel className="md:w-[50%] flex items-center justify-center">
               <CarouselContent>
                 {ideias.map((ideia, index) => (
                   <CarouselItem key={index}>
@@ -196,6 +196,7 @@ export default function Component() {
             </Carousel>
           </>
         )}
+
       </div>
     </div>
   );

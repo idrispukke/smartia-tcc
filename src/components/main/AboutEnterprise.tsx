@@ -9,12 +9,12 @@ export default function AboutEnterprise() {
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                }}>
-               <div className="relative z-10 flex flex-col items-center max-w-2xl px-4 space-y-4">
-                    <h2 className="text-4xl font-bold">Sobre a empresa</h2>
-                    <p className="text-lg w-[67%] text-center">Uma empresa totalmente dedicada e apaixonada pelos nossos clientes!</p>
+               <div className="relative z-10 flex flex-col items-center h-screen  pt-10 mdpt-16 pb-2  max-w-2xl px-4 space-y-4">
+                    <h2 className="text-3xl md:text-4xl font-bold">Sobre a empresa</h2>
+                    <p className="md:text-lg  md:w-[67%] text-center">Uma empresa totalmente dedicada e apaixonada pelos nossos clientes!</p>
 
                     {/* Bloco de Descrição com Fundo Semi-transparente */}
-                    <div className="bg-black bg-opacity-60 rounded-xl p-6 text-lg leading-relaxed shadow-lg">
+                    <div className="bg-black bg-opacity-60 rounded-xl p-6 md:text-lg text-justify leading-relaxed shadow-lg">
                          <p>
                               A empresa Smart.ia se dedica com um compromisso inabalável com a qualidade e a inovação. Ela não apenas atende às expectativas dos seus clientes, mas frequentemente as supera. Desde sua fundação em 2024, tem sido sinônimo de integridade, dedicação e inovação, contando com uma equipe excepcional.
                          </p>
