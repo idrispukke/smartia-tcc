@@ -1,4 +1,5 @@
 import ListBg from '@/assets/img/background/listBg.png'
+import FeatureMobile from '@/components/featureMobile'
 import Header from '@/components/header'
 import RowTable from '@/components/rowTable'
 import { ScrollArea } from '@/components/ui/scroll-area'
@@ -23,13 +24,13 @@ export default function ListIa() {
                <div className='w-full h-full flex flex-col items-center content-center fixed'>
                     <Header />
                     <Tabs defaultValue="text" className=" mt-24 container mx-auto space-y-2 ">
-                         <TabsList className='ml-8'>
-                              <TabsTrigger value="text">IAs de Texto</TabsTrigger>
-                              <TabsTrigger value="video">IAs de Video</TabsTrigger>
-                              <TabsTrigger value="imagem">IAs de Imagem</TabsTrigger>
+                         <TabsList className='md:ml-8 ml-3'>
+                              <TabsTrigger className='md:text-base text-xs' value="text">IAs de Texto</TabsTrigger>
+                              <TabsTrigger className='md:text-base text-xs' value="video">IAs de Video</TabsTrigger>
+                              <TabsTrigger className='md:text-base text-xs' value="imagem">IAs de Imagem</TabsTrigger>
                          </TabsList>
                          <ScrollArea className=" h-[80%] flex flex-col gap-3 ">
-                              <TabsContent value="text" className='space-y1'>
+                              <TabsContent value="text" className='space-y1 hidden md:flex justify-center items-center w-full'>
                                    {
                                         IAsTexto.map((ia, index) => {
                                              return (
@@ -44,8 +45,23 @@ export default function ListIa() {
                                         })
                                    }
                               </TabsContent>
+                              <TabsContent value="text" className='space-y1 block md:flex justify-center items-center w-full'>
+                                   {
+                                        IAsTexto.map((ia, index) => {
+                                             return (
+                                                  <FeatureMobile
+                                                       key={index + 1}
+                                                       nome={ia.nome}
+                                                       link={ia.link}
+                                                       planos={ia.planos}
+                                                       features={ia.uso}
+                                                  />
+                                             )
+                                        })
+                                   }
+                              </TabsContent>
                               
-                              <TabsContent value="video" className='space-y1'>
+                              <TabsContent value="video" className='space-y1 hidden md:flex justify-center items-center w-full'>
                                    {
                                         IAsVideo.map((ia, index) => {
                                              return (
@@ -60,12 +76,42 @@ export default function ListIa() {
                                         })
                                    }
                               </TabsContent>
+                              <TabsContent value="video" className='space-y1 block md:flex justify-center items-center w-full'>
+                                   {
+                                        IAsVideo.map((ia, index) => {
+                                             return (
+                                                  <FeatureMobile
+                                                       key={index + 1}
+                                                       nome={ia.nome}
+                                                       link={ia.link}
+                                                       planos={ia.planos}
+                                                       features={ia.uso}
+                                                  />
+                                             )
+                                        })
+                                   }
+                              </TabsContent>
 
-                              <TabsContent value="imagem" className='space-y1'>
+                              <TabsContent value="imagem" className='space-y1 hidden md:flex justify-center items-center w-full'>
                                    {
                                         IAsImagem.map((ia, index) => {
                                              return (
                                                   <RowTable
+                                                       key={index + 1}
+                                                       nome={ia.nome}
+                                                       link={ia.link}
+                                                       planos={ia.planos}
+                                                       features={ia.uso}
+                                                  />
+                                             )
+                                        })
+                                   }
+                              </TabsContent>
+                              <TabsContent value="imagem" className='space-y1 block md:flex justify-center items-center w-full'>
+                                   {
+                                        IAsImagem.map((ia, index) => {
+                                             return (
+                                                  <FeatureMobile
                                                        key={index + 1}
                                                        nome={ia.nome}
                                                        link={ia.link}

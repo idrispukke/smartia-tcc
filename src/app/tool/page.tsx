@@ -11,7 +11,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from '@/components/ui/carousel';
-import { Dialog, DialogContent } from '@/components/ui/dialog';
+import { Dialog } from '@/components/ui/dialog';
 import { Input } from '@/components/ui/input';
 import {
   Select,
@@ -51,8 +51,6 @@ export default function Component() {
   // Função para abrir o dialog
   const openDialog = () => setIsOpen(true)
 
-  // Função para fechar o dialog
-  const closeDialog = () => setIsOpen(false)
 
   const { control, handleSubmit, reset } = useForm<FormData>({
     defaultValues: {
@@ -181,7 +179,7 @@ export default function Component() {
         {isFetched && ideias && (
           <>
             <Carousel className="md:w-[50%] hidden md:flex items-center justify-center">
-              <CarouselContent>
+              <CarouselContent >
                 {ideias.map((ideia, index) => (
                   <CarouselItem key={index}>
                     <PostGenerator

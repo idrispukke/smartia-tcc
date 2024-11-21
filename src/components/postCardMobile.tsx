@@ -1,8 +1,8 @@
 'use client'
 
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Button } from "@/components/ui/button"
-import { Copy, MessageSquare, Hash, ChevronLeft, ChevronRight, X } from 'lucide-react'
+import { Copy, MessageSquare, Hash } from 'lucide-react'
 
 import {
      Accordion,
@@ -16,13 +16,12 @@ import { DialogContent, DialogHeader, DialogTitle } from './ui/dialog'
 interface PostInfo {
      title: string
      idea: string
-     option?: number
      caption: string
      hashtags: string[]
 }
 
 
-export default function PostCardMobile({ caption, hashtags, idea, option, title }: PostInfo) {
+export default function PostCardMobile({ caption, hashtags, idea, title }: PostInfo) {
      const { toast } = useToast()
      const [copied, setCopied] = useState<'idea' | 'caption' | 'hashtags' | null>(null)
 
