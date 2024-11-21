@@ -12,7 +12,7 @@ export default function Header() {
                >
                     <Image width={48} height={58} src={LandPageIMG.src} alt="Logo Smart.ia" />
                </Link>
-               <div className="gap-8 text-lg hidden md:block">
+               <div className=" text-lg  hidden md:flex  gap-6 ">
                     <a href="#ferrameta" className="hover:underline">Sobre a Ferramenta</a>
                     <a href="#sobre" className="hover:underline">Sobre Nós</a>
                     <a href="#contato" className="hover:underline">Contatos</a>
@@ -27,7 +27,7 @@ export default function Header() {
                                    <SheetHeader className="flex justify-between items-center mb-4">
                                         <SheetTitle className="text-2xl font-bold text-white">Menu</SheetTitle>
                                    </SheetHeader>
-                                   <nav className="flex flex-col space-y-2">
+                                   <nav className="flex flex-col  space-y-2">
                                         {Links.map((link, index) => (
                                              <Link
                                                   key={index + 1}
