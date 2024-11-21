@@ -2,6 +2,7 @@
 
 import SmartiaIMG from '@/assets/img/logoSmartia.png';
 import PostGenerator from '@/components/post';
+import PostCardMobile from '@/components/postCardMobile';
 import { Button } from '@/components/ui/button';
 import {
   Carousel,
@@ -10,6 +11,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from '@/components/ui/carousel';
+import { Dialog, DialogContent } from '@/components/ui/dialog';
 import { Input } from '@/components/ui/input';
 import {
   Select,
@@ -43,6 +45,14 @@ export default function Component() {
   const [ideias, setIdeias] = useState<Ideia[] | null>(null);
   const [isFetched, setIsFetched] = useState<boolean>(false); // Estado para verificar se a requisição foi completada
   const { toast } = useToast();
+  const [isOpen, setIsOpen] = useState(false)
+
+
+  // Função para abrir o dialog
+  const openDialog = () => setIsOpen(true)
+
+  // Função para fechar o dialog
+  const closeDialog = () => setIsOpen(false)
 
   const { control, handleSubmit, reset } = useForm<FormData>({
     defaultValues: {
@@ -61,7 +71,7 @@ export default function Component() {
   }) => {
     startTransition(async () => {
       try {
-        const response = await axios.post('http://localhost:3000/api/test', {
+        const response = await axios.post('https://smartia.vercel.app/api/tool', {
           ideia: data.ideia,
           tipo: data.tipo,
           plataforma: data.plataforma,
@@ -70,12 +80,7 @@ export default function Component() {
         setIdeias(response.data);
         setIsFetched(true); // Marca como requisitado
         reset();
-
-        toast({
-          title: 'Sucesso!',
-          description: 'Seus posts foram criados com sucesso',
-          variant: 'default',
-        });
+        openDialog()
       } catch {
         toast({
           title: 'Erro!',
@@ -83,13 +88,13 @@ export default function Component() {
           variant: 'destructive',
         });
 
-        setIsFetched(false);   
+        setIsFetched(false);
       }
     });
   };
 
   return (
-    <div className="w-screen h-screen bg-gradient-to-br from-teal-500 to-blue-900  flex justify-center items-center flex-col md:flex-row gap-1 p-4">
+    <div className="w-screen- h-screen bg-gradient-to-br from-teal-500 to-blue-900  flex justify-center items-center flex-col md:flex-row gap-1 p-4">
       {/* Seção do Formulário */}
       <div className="p-6 mt-10 bg-slate-900 rounded-sm flex flex-col  gap-8 shadow-xl">
         <Link href="/" className="self-start">
@@ -167,17 +172,15 @@ export default function Component() {
                 <span>Enviar</span>
               )}
             </Button>
-            {/* {error && <p className="text-red-500">{error}</p>} 
-                         {message && <p className="text-green-500">{message}</p>}  */}
           </form>
         </div>
       </div>
 
       {/* Seção de Exibição de Posts */}
-      <div className="md:w-[70%] md:flex flex-col gap-4 justify-center items-center border-none ">
+      <div className="  md:w-[70%] md:flex flex-col gap-4 justify-center items-center border-none ">
         {isFetched && ideias && (
           <>
-            <Carousel className="md:w-[50%] flex items-center justify-center">
+            <Carousel className="md:w-[50%] hidden md:flex items-center justify-center">
               <CarouselContent>
                 {ideias.map((ideia, index) => (
                   <CarouselItem key={index}>
@@ -194,9 +197,26 @@ export default function Component() {
               <CarouselPrevious variant={'default'} />
               <CarouselNext variant={'default'} />
             </Carousel>
+
+            <Dialog open={isOpen} onOpenChange={setIsOpen} >
+              <Carousel orientation='vertical' className=" flex md:hidden items-center justify-center">
+                <CarouselContent>
+                  {ideias.map((ideia, index) => (
+                    <CarouselItem key={index}>
+                      <PostCardMobile
+                        key={index + 1}
+                        title={ideia.title}
+                        idea={ideia.ideia}
+                        caption={ideia.legenda}
+                        hashtags={ideia.hashtags}
+                      />
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+              </Carousel>
+            </Dialog>
           </>
         )}
-
       </div>
     </div>
   );

@@ -6,7 +6,7 @@ import book from '@/assets/img/book.jpg'
 export default function AboutBook() {
      return (
           <section
-               className="flex h-[660px] md:gap-16  justify-center items-center"
+               className="flex h-[660px] md:gap-16 gap-5 flex-col  justify-center items-center"
                style={{
                     backgroundImage: `url(${aboutToolBg.src})`,
                     backgroundSize: 'cover',
@@ -20,15 +20,15 @@ export default function AboutBook() {
                          width={300}
                          height={300}
                          alt=""
-                         className="hidden"
+                         className="w-24 md:full"
                     />
 
                </div>
-               <div className="md:w-[40%] w-[90%] flex  gap-16 flex-col justify-center items-center">
-                    <h1 className="text-3xl md:text-5xl self-start">
+               <div className="  md:w-[40%] w-[90%] flex  md:gap-16 gap-10 flex-col justify-center items-center">
+                    <h1 className=" text-center block text-3xl md:text-5xl md:self-start">
                          Baixe agora nosso Ebook gratuito!
                     </h1>
-                    <p className="text-justify text-xl">
+                    <p className=" hidden md:block text-justify text-xl">
                          Nosso time disponibilizou para você um Ebook sobre como fazer prompts e melhorar suas respostas utilizando IAs e o melhor totalmente gratuito. Acesse aqui
                     </p>
                     <Link
