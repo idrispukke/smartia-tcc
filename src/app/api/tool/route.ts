@@ -37,7 +37,7 @@ export async function POST(request: NextRequest) {
     };
 
     const genAI = new GoogleGenerativeAI(
-      'AIzaSyBScCLyZ6YY5MD_DtN2oJnChJydGD9RIXU'
+      'AIzaSyDWlUnunSTEpLAO8owMdyOygq4Ca0BFatg'
     ); // Use environment variable for API key
     const model = genAI.getGenerativeModel({ model: 'gemini-1.0-pro' });
 

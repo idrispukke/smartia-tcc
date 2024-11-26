@@ -25,7 +25,7 @@ import axios from 'axios';
 import { ArrowLeft, Loader2 } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState, useTransition } from 'react';
+import { useEffect, useState, useTransition } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 
 type FormData = {
@@ -46,11 +46,24 @@ export default function Component() {
   const [isFetched, setIsFetched] = useState<boolean>(false); // Estado para verificar se a requisição foi completada
   const { toast } = useToast();
   const [isOpen, setIsOpen] = useState(false)
+  const [isMobile, setIsMobile] = useState<boolean>(false);
 
 
   // Função para abrir o dialog
   const openDialog = () => setIsOpen(true)
 
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsMobile(window.innerWidth <= 768); // 768px é o limite para dispositivos móveis
+    };
+  
+    checkScreenSize(); // Verifica o tamanho da tela no primeiro render
+    window.addEventListener('resize', checkScreenSize); // Recalcula quando a tela for redimensionada
+  
+    return () => {
+      window.removeEventListener('resize', checkScreenSize); // Limpa o evento ao desmontar o componente
+    };
+  }, []);
 
   const { control, handleSubmit, reset } = useForm<FormData>({
     defaultValues: {
@@ -69,7 +82,7 @@ export default function Component() {
   }) => {
     startTransition(async () => {
       try {
-        const response = await axios.post('https://smartia.vercel.app/api/tool', {
+        const response = await axios.post('http://localhost:3000/api/tool', {
           ideia: data.ideia,
           tipo: data.tipo,
           plataforma: data.plataforma,
@@ -77,8 +90,8 @@ export default function Component() {
 
         setIdeias(response.data);
         setIsFetched(true); // Marca como requisitado
-        reset();
-        openDialog()
+        reset()
+        if(isMobile) openDialog()
       } catch {
         toast({
           title: 'Erro!',
@@ -195,8 +208,13 @@ export default function Component() {
               <CarouselPrevious variant={'default'} />
               <CarouselNext variant={'default'} />
             </Carousel>
-
-            <Dialog open={isOpen} onOpenChange={setIsOpen} >
+          </>
+        )}
+      </div>
+      <div className="hidden flex-col gap-4 justify-center items-center border-none ">
+        {isFetched && ideias && (
+          <>
+            <Dialog open={isOpen} onOpenChange={setIsOpen}>
               <Carousel orientation='vertical' className=" flex md:hidden items-center justify-center">
                 <CarouselContent>
                   {ideias.map((ideia, index) => (
