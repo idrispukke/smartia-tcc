@@ -82,7 +82,7 @@ export default function Component() {
   }) => {
     startTransition(async () => {
       try {
-        const response = await axios.post('http://localhost:3000/api/tool', {
+        const response = await axios.post('https://smartia.vercel.app/api/tool', {
           ideia: data.ideia,
           tipo: data.tipo,
           plataforma: data.plataforma,
