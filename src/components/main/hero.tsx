@@ -20,7 +20,7 @@ export default function Hero() {
                               href="/tool"
                               className=" py-2 px-6 text-2xl bg-gradient-to-r from-blue-500 to-cyan-400 rounded-lg "
                          >
-                              Acesar Ferramenta
+                              Acessar Ferramenta
                          </Link>
                          <Link
                               href="/ia-list"
