@@ -17,8 +17,8 @@ export default function AboutBook() {
                <div>
                     <Image
                          src={book.src}
-                         width={300}
-                         height={300}
+                         width={400}
+                         height={400}
                          alt=""
                          className="w-24 md:full"
                     />
@@ -26,16 +26,16 @@ export default function AboutBook() {
                </div>
                <div className="  md:w-[40%] w-[90%] flex  md:gap-16 gap-10 flex-col justify-center items-center">
                     <h1 className=" text-center block text-3xl md:text-5xl md:self-start">
-                         Baixe agora nosso Ebook gratuito!
+                         Baixe agora nosso E-Book gratuito!
                     </h1>
                     <p className=" hidden md:block text-justify text-xl">
-                         Nosso time disponibilizou para você um Ebook sobre como fazer prompts e melhorar suas respostas utilizando IAs e o melhor totalmente gratuito. Acesse aqui
+                         Nosso time disponibilizou para você um E-Book sobre como fazer prompts e melhorar suas respostas utilizando IAs e o melhor totalmente gratuito.
                     </p>
                     <Link
                          href="/assets/book.pdf"
                          className="py-1 px-4  md:py-2 md:px-6 md:text-3xl text-xl bg-gradient-to-r from-blue-500 to-cyan-400 rounded-lg hover:from-blue-600 hover:to-cyan-500 "
                     >
-                         Acessar e-book Gratuito
+                         Acessar E-Book Gratuito
                     </Link>
                </div>
           </section>
