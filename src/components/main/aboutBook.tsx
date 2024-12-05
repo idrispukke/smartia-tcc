@@ -29,7 +29,10 @@ export default function AboutBook() {
                          Baixe agora nosso Ebook gratuito!
                     </h1>
                     <p className=" hidden md:block text-justify text-center text-xl">
-                         Nosso time disponibilizou um E-Book sobre como fazer prompts e melhorar suas respostas utilizando IAs.<br/> E o melhor: totalmente gratuito!
+                         Nosso time disponibilizou um E-Book sobre como fazer prompts e melhorar suas respostas utilizando IAs.
+                    </p>
+                    <p className=" hidden md:block text-justify text-center text-xl">
+                         E o melhor: totalmente gratuito!
                     </p>
                     <Link
                          href="/assets/book.pdf"
