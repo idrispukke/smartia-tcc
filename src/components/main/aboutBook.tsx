@@ -32,6 +32,7 @@ export default function AboutBook() {
                          Nosso time disponibilizou um E-Book sobre como fazer prompts e melhorar suas respostas utilizando IAs.
                           E o melhor: totalmente gratuito!
                     </p>
+                    <Link
                          href="/assets/book.pdf"
                          className="py-1 px-4  md:py-2 md:px-6 md:text-3xl text-xl bg-gradient-to-r from-blue-500 to-cyan-400 rounded-lg hover:from-blue-600 hover:to-cyan-500 "
                     >
