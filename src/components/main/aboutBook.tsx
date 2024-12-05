@@ -28,13 +28,10 @@ export default function AboutBook() {
                     <h1 className=" text-balance text-center block text-3xl md:text-5xl md:self-start">
                          Baixe agora nosso Ebook gratuito!
                     </h1>
-                    <p className=" hidden md:block text-justify text-center text-xl">
+                    <p className=" hidden md:block text-justify text-center text-balance text-xl">
                          Nosso time disponibilizou um E-Book sobre como fazer prompts e melhorar suas respostas utilizando IAs.
+                          E o melhor: totalmente gratuito!
                     </p>
-                    <p className=" hidden md:block text-justify text-center text-xl">
-                         E o melhor: totalmente gratuito!
-                    </p>
-                    <Link
                          href="/assets/book.pdf"
                          className="py-1 px-4  md:py-2 md:px-6 md:text-3xl text-xl bg-gradient-to-r from-blue-500 to-cyan-400 rounded-lg hover:from-blue-600 hover:to-cyan-500 "
                     >
