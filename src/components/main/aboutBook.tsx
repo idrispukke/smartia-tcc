@@ -24,11 +24,11 @@ export default function AboutBook() {
                     />
 
                </div>
-               <div className="  md:w-[40%] w-[90%] flex  md:gap-16 gap-10 flex-col justify-center items-center">
-                    <h1 className=" text-center block text-3xl md:text-5xl md:self-start">
-                         Baixe agora nosso E-Book gratuito!
+               <div className="  w-[90%] md:w-[40%] flex md:gap-16 gap-10 flex-col justify-center items-center">
+                    <h1 className=" text-balance text-center block text-3xl md:text-5xl md:self-start">
+                         Baixe agora nosso <br/> E-Book gratuito!
                     </h1>
-                    <p className=" hidden md:block text-justify text-xl">
+                    <p className=" hidden md:block text-justify text-center text-xl">
                          Nosso time disponibilizou para você um E-Book sobre como fazer prompts e melhorar suas respostas utilizando IAs e o melhor totalmente gratuito.
                     </p>
                     <Link
