@@ -17,8 +17,8 @@ const cards = [
      },
      {
           icon: <Camera className="w-6 h-6 text-gray-400" />,
-          title: "Imagens",
-          description: "Procure suas imagens da melhor forma com a smart.ia",
+          title: "Pesquisar",
+          description: "Pesquise e gere imagens da melhor forma com a Smart.ia",
           trigger: "Gerar imagens"
      }
 ]
