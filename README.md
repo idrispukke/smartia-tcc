@@ -40,7 +40,7 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
 <table>
   <tr>
     <td align="center">
-      <a href="https://github.com/joelsondiasti" title="blank">
+      <a href="https://github.com/diasjoedev" title="blank">
         <img src="https://avatars.githubusercontent.com/u/38875073?v=4" width="100px;" alt="Foto do Joelson"/><br>
         <sub>
           <b>Joelson Dias</b>
